@@ -1,0 +1,23 @@
+[2022-10-03 20:38:03,707] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: ingest_star_wars.get_raw_star_wars_films_data manual__2022-10-03T20:35:40.694655+00:00 [queued]>
+[2022-10-03 20:38:03,746] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: ingest_star_wars.get_raw_star_wars_films_data manual__2022-10-03T20:35:40.694655+00:00 [queued]>
+[2022-10-03 20:38:03,750] {taskinstance.py:1238} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-03 20:38:03,750] {taskinstance.py:1239} INFO - Starting attempt 1 of 1
+[2022-10-03 20:38:03,752] {taskinstance.py:1240} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-03 20:38:03,788] {taskinstance.py:1259} INFO - Executing <Task(PythonOperator): get_raw_star_wars_films_data> on 2022-10-03 20:35:40.694655+00:00
+[2022-10-03 20:38:03,800] {standard_task_runner.py:52} INFO - Started process 1776 to run task
+[2022-10-03 20:38:03,816] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'ingest_star_wars', 'get_raw_star_wars_films_data', 'manual__2022-10-03T20:35:40.694655+00:00', '--job-id', '14', '--raw', '--subdir', 'DAGS_FOLDER/ingest_starwars_data.py', '--cfg-path', '/tmp/tmpw8x6lkl5', '--error-file', '/tmp/tmpnfd8189u']
+[2022-10-03 20:38:03,830] {standard_task_runner.py:77} INFO - Job 14: Subtask get_raw_star_wars_films_data
+[2022-10-03 20:38:04,021] {logging_mixin.py:109} INFO - Running <TaskInstance: ingest_star_wars.get_raw_star_wars_films_data manual__2022-10-03T20:35:40.694655+00:00 [running]> on host 86c7e9112604
+[2022-10-03 20:38:04,141] {taskinstance.py:1426} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=xxxx@xxxxx.com
+AIRFLOW_CTX_DAG_OWNER=Ram
+AIRFLOW_CTX_DAG_ID=ingest_star_wars
+AIRFLOW_CTX_TASK_ID=get_raw_star_wars_films_data
+AIRFLOW_CTX_EXECUTION_DATE=2022-10-03T20:35:40.694655+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-10-03T20:35:40.694655+00:00
+[2022-10-03 20:38:07,418] {python.py:175} INFO - Done. Returned value was: None
+[2022-10-03 20:38:07,430] {taskinstance.py:1277} INFO - Marking task as SUCCESS. dag_id=ingest_star_wars, task_id=get_raw_star_wars_films_data, execution_date=20221003T203540, start_date=20221003T203803, end_date=20221003T203807
+[2022-10-03 20:38:07,494] {local_task_job.py:154} INFO - Task exited with return code 0
+[2022-10-03 20:38:07,540] {local_task_job.py:264} INFO - 0 downstream tasks scheduled from follow-on schedule check

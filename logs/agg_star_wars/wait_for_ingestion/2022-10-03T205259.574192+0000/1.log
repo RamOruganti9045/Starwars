@@ -1,0 +1,28 @@
+[2022-10-03 20:53:01,085] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: agg_star_wars.wait_for_ingestion manual__2022-10-03T20:52:58.096971+00:00 [queued]>
+[2022-10-03 20:53:01,099] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: agg_star_wars.wait_for_ingestion manual__2022-10-03T20:52:58.096971+00:00 [queued]>
+[2022-10-03 20:53:01,100] {taskinstance.py:1238} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-03 20:53:01,101] {taskinstance.py:1239} INFO - Starting attempt 1 of 3
+[2022-10-03 20:53:01,101] {taskinstance.py:1240} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-03 20:53:01,115] {taskinstance.py:1259} INFO - Executing <Task(ExternalTaskSensor): wait_for_ingestion> on 2022-10-03 20:52:59.574192+00:00
+[2022-10-03 20:53:01,121] {standard_task_runner.py:52} INFO - Started process 2353 to run task
+[2022-10-03 20:53:01,126] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'agg_star_wars', 'wait_for_ingestion', 'manual__2022-10-03T20:52:58.096971+00:00', '--job-id', '20', '--raw', '--subdir', 'DAGS_FOLDER/star_wars_agg.py', '--cfg-path', '/tmp/tmp2jxejk71', '--error-file', '/tmp/tmpagi9ya27']
+[2022-10-03 20:53:01,127] {standard_task_runner.py:77} INFO - Job 20: Subtask wait_for_ingestion
+[2022-10-03 20:53:01,183] {logging_mixin.py:109} INFO - Running <TaskInstance: agg_star_wars.wait_for_ingestion manual__2022-10-03T20:52:58.096971+00:00 [running]> on host 86c7e9112604
+[2022-10-03 20:53:01,276] {taskinstance.py:1426} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=xxxx@xxxxx.com
+AIRFLOW_CTX_DAG_OWNER=Anvesh
+AIRFLOW_CTX_DAG_ID=agg_star_wars
+AIRFLOW_CTX_TASK_ID=wait_for_ingestion
+AIRFLOW_CTX_EXECUTION_DATE=2022-10-03T20:52:59.574192+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-10-03T20:52:58.096971+00:00
+[2022-10-03 20:53:01,279] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/utils/context.py:152: AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+  warnings.warn(_create_deprecation_warning(key, self._deprecation_replacements[key]))
+
+[2022-10-03 20:53:01,280] {external_task.py:173} INFO - Poking for tasks ['ingestion_success'] in dag ingest_star_wars on 2022-10-03T20:52:59.574192+00:00 ... 
+[2022-10-03 20:53:16,344] {local_task_job.py:212} WARNING - State of this instance has been externally set to success. Terminating instance.
+[2022-10-03 20:53:16,347] {process_utils.py:124} INFO - Sending Signals.SIGTERM to group 2353. PIDs of all processes in the group: [2353]
+[2022-10-03 20:53:16,348] {process_utils.py:75} INFO - Sending the signal Signals.SIGTERM to group 2353
+[2022-10-03 20:53:16,349] {taskinstance.py:1408} ERROR - Received SIGTERM. Terminating subprocesses.
+[2022-10-03 20:53:16,401] {process_utils.py:70} INFO - Process psutil.Process(pid=2353, status='terminated', exitcode=0, started='20:53:00') (2353) terminated with exit code 0

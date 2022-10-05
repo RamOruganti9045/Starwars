@@ -1,0 +1,25 @@
+[2022-10-04 12:05:35,078] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: ingest_star_wars.trigger_star_wars_agg_dag manual__2022-10-04T12:05:17.491372+00:00 [queued]>
+[2022-10-04 12:05:35,089] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: ingest_star_wars.trigger_star_wars_agg_dag manual__2022-10-04T12:05:17.491372+00:00 [queued]>
+[2022-10-04 12:05:35,090] {taskinstance.py:1238} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-04 12:05:35,091] {taskinstance.py:1239} INFO - Starting attempt 1 of 1
+[2022-10-04 12:05:35,091] {taskinstance.py:1240} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-04 12:05:35,105] {taskinstance.py:1259} INFO - Executing <Task(TriggerDagRunOperator): trigger_star_wars_agg_dag> on 2022-10-04 12:05:17.491372+00:00
+[2022-10-04 12:05:35,111] {standard_task_runner.py:52} INFO - Started process 338 to run task
+[2022-10-04 12:05:35,115] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'ingest_star_wars', 'trigger_star_wars_agg_dag', 'manual__2022-10-04T12:05:17.491372+00:00', '--job-id', '28', '--raw', '--subdir', 'DAGS_FOLDER/ingest_starwars_data.py', '--cfg-path', '/tmp/tmp28e53dpn', '--error-file', '/tmp/tmpct6utn5q']
+[2022-10-04 12:05:35,117] {standard_task_runner.py:77} INFO - Job 28: Subtask trigger_star_wars_agg_dag
+[2022-10-04 12:05:35,180] {logging_mixin.py:109} INFO - Running <TaskInstance: ingest_star_wars.trigger_star_wars_agg_dag manual__2022-10-04T12:05:17.491372+00:00 [running]> on host be1a5b89e146
+[2022-10-04 12:05:35,269] {taskinstance.py:1426} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=xxxx@xxxxx.com
+AIRFLOW_CTX_DAG_OWNER=Ram
+AIRFLOW_CTX_DAG_ID=ingest_star_wars
+AIRFLOW_CTX_TASK_ID=trigger_star_wars_agg_dag
+AIRFLOW_CTX_EXECUTION_DATE=2022-10-04T12:05:17.491372+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-10-04T12:05:17.491372+00:00
+[2022-10-04 12:05:37,119] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/api/common/experimental/trigger_dag.py:91: DeprecationWarning: Calling `DAG.create_dagrun()` without an explicit data interval is deprecated
+  dag_hash=dag_bag.dags_hash.get(dag_id),
+
+[2022-10-04 12:05:37,161] {taskinstance.py:1277} INFO - Marking task as SUCCESS. dag_id=ingest_star_wars, task_id=trigger_star_wars_agg_dag, execution_date=20221004T120517, start_date=20221004T120535, end_date=20221004T120537
+[2022-10-04 12:05:37,223] {local_task_job.py:154} INFO - Task exited with return code 0
+[2022-10-04 12:05:37,262] {local_task_job.py:264} INFO - 0 downstream tasks scheduled from follow-on schedule check

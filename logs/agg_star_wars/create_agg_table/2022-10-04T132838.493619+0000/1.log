@@ -1,0 +1,29 @@
+[2022-10-04 13:28:39,781] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: agg_star_wars.create_agg_table manual__2022-10-04T13:28:38.465037+00:00 [queued]>
+[2022-10-04 13:28:39,797] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: agg_star_wars.create_agg_table manual__2022-10-04T13:28:38.465037+00:00 [queued]>
+[2022-10-04 13:28:39,800] {taskinstance.py:1238} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-04 13:28:39,801] {taskinstance.py:1239} INFO - Starting attempt 1 of 1
+[2022-10-04 13:28:39,802] {taskinstance.py:1240} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-04 13:28:39,818] {taskinstance.py:1259} INFO - Executing <Task(PostgresOperator): create_agg_table> on 2022-10-04 13:28:38.493619+00:00
+[2022-10-04 13:28:39,824] {standard_task_runner.py:52} INFO - Started process 3819 to run task
+[2022-10-04 13:28:39,828] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'agg_star_wars', 'create_agg_table', 'manual__2022-10-04T13:28:38.465037+00:00', '--job-id', '37', '--raw', '--subdir', 'DAGS_FOLDER/star_wars_agg.py', '--cfg-path', '/tmp/tmpvqjdgaw8', '--error-file', '/tmp/tmpetwy7p5u']
+[2022-10-04 13:28:39,830] {standard_task_runner.py:77} INFO - Job 37: Subtask create_agg_table
+[2022-10-04 13:28:39,897] {logging_mixin.py:109} INFO - Running <TaskInstance: agg_star_wars.create_agg_table manual__2022-10-04T13:28:38.465037+00:00 [running]> on host be1a5b89e146
+[2022-10-04 13:28:40,004] {taskinstance.py:1426} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=xxxx@xxxxx.com
+AIRFLOW_CTX_DAG_OWNER=Ram
+AIRFLOW_CTX_DAG_ID=agg_star_wars
+AIRFLOW_CTX_TASK_ID=create_agg_table
+AIRFLOW_CTX_EXECUTION_DATE=2022-10-04T13:28:38.493619+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-10-04T13:28:38.465037+00:00
+[2022-10-04 13:28:40,017] {base.py:79} INFO - Using connection to: id: postgres_local. Host: host.docker.internal, Port: 5432, Schema: postgres, Login: postgres, Password: ***, extra: {}
+[2022-10-04 13:28:40,116] {dbapi.py:225} INFO - Running statement: CREATE TABLE IF NOT EXISTS star_wars_agg_data (
+            movie_title TEXT,
+            oldest_character TEXT
+            ), parameters: None
+[2022-10-04 13:28:40,123] {postgres.py:71} INFO - NOTICE:  relation "star_wars_agg_data" already exists, skipping
+
+[2022-10-04 13:28:40,141] {taskinstance.py:1277} INFO - Marking task as SUCCESS. dag_id=agg_star_wars, task_id=create_agg_table, execution_date=20221004T132838, start_date=20221004T132839, end_date=20221004T132840
+[2022-10-04 13:28:40,201] {local_task_job.py:154} INFO - Task exited with return code 0
+[2022-10-04 13:28:40,241] {local_task_job.py:264} INFO - 1 downstream tasks scheduled from follow-on schedule check

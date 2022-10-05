@@ -1,0 +1,41 @@
+[2022-10-03 20:38:00,736] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: ingest_star_wars.create_people_table manual__2022-10-03T20:35:40.694655+00:00 [queued]>
+[2022-10-03 20:38:00,754] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: ingest_star_wars.create_people_table manual__2022-10-03T20:35:40.694655+00:00 [queued]>
+[2022-10-03 20:38:00,755] {taskinstance.py:1238} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-03 20:38:00,756] {taskinstance.py:1239} INFO - Starting attempt 1 of 1
+[2022-10-03 20:38:00,760] {taskinstance.py:1240} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-03 20:38:00,779] {taskinstance.py:1259} INFO - Executing <Task(PostgresOperator): create_people_table> on 2022-10-03 20:35:40.694655+00:00
+[2022-10-03 20:38:00,785] {standard_task_runner.py:52} INFO - Started process 1769 to run task
+[2022-10-03 20:38:00,795] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'ingest_star_wars', 'create_people_table', 'manual__2022-10-03T20:35:40.694655+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/ingest_starwars_data.py', '--cfg-path', '/tmp/tmpl218mpc6', '--error-file', '/tmp/tmp1_uzt6ky']
+[2022-10-03 20:38:00,796] {standard_task_runner.py:77} INFO - Job 11: Subtask create_people_table
+[2022-10-03 20:38:00,935] {logging_mixin.py:109} INFO - Running <TaskInstance: ingest_star_wars.create_people_table manual__2022-10-03T20:35:40.694655+00:00 [running]> on host 86c7e9112604
+[2022-10-03 20:38:01,157] {taskinstance.py:1426} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=xxxx@xxxxx.com
+AIRFLOW_CTX_DAG_OWNER=Ram
+AIRFLOW_CTX_DAG_ID=ingest_star_wars
+AIRFLOW_CTX_TASK_ID=create_people_table
+AIRFLOW_CTX_EXECUTION_DATE=2022-10-03T20:35:40.694655+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-10-03T20:35:40.694655+00:00
+[2022-10-03 20:38:01,176] {base.py:79} INFO - Using connection to: id: postgres_local. Host: host.docker.internal, Port: 5432, Schema: postgres, Login: postgres, Password: ***, extra: {}
+[2022-10-03 20:38:01,269] {dbapi.py:225} INFO - Running statement: CREATE TABLE IF NOT EXISTS star_wars_people (
+            name TEXT,
+            height TEXT,
+            mass TEXT,
+            hair_color TEXT,
+            skin_color TEXT,
+            eye_color TEXT,
+            birth_year TEXT,
+            gender TEXT,
+            homeworld TEXT,
+            films TEXT,
+            species TEXT,
+            vehicles TEXT,
+            starships TEXT,
+            created TEXT,
+            edited TEXT,
+            url TEXT
+            );, parameters: None
+[2022-10-03 20:38:01,349] {taskinstance.py:1277} INFO - Marking task as SUCCESS. dag_id=ingest_star_wars, task_id=create_people_table, execution_date=20221003T203540, start_date=20221003T203800, end_date=20221003T203801
+[2022-10-03 20:38:01,451] {local_task_job.py:154} INFO - Task exited with return code 0
+[2022-10-03 20:38:01,709] {local_task_job.py:264} INFO - 1 downstream tasks scheduled from follow-on schedule check

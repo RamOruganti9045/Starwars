@@ -1,0 +1,55 @@
+[2022-10-04 13:30:12,861] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: agg_star_wars.aggregation_of_data scheduled__2022-10-03T00:00:00+00:00 [queued]>
+[2022-10-04 13:30:12,875] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: agg_star_wars.aggregation_of_data scheduled__2022-10-03T00:00:00+00:00 [queued]>
+[2022-10-04 13:30:12,876] {taskinstance.py:1238} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-04 13:30:12,876] {taskinstance.py:1239} INFO - Starting attempt 1 of 1
+[2022-10-04 13:30:12,877] {taskinstance.py:1240} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-04 13:30:12,890] {taskinstance.py:1259} INFO - Executing <Task(PostgresOperator): aggregation_of_data> on 2022-10-03 00:00:00+00:00
+[2022-10-04 13:30:12,895] {standard_task_runner.py:52} INFO - Started process 3915 to run task
+[2022-10-04 13:30:12,900] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'agg_star_wars', 'aggregation_of_data', 'scheduled__2022-10-03T00:00:00+00:00', '--job-id', '47', '--raw', '--subdir', 'DAGS_FOLDER/star_wars_agg.py', '--cfg-path', '/tmp/tmpydonsp9r', '--error-file', '/tmp/tmpim4jb72t']
+[2022-10-04 13:30:12,901] {standard_task_runner.py:77} INFO - Job 47: Subtask aggregation_of_data
+[2022-10-04 13:30:12,959] {logging_mixin.py:109} INFO - Running <TaskInstance: agg_star_wars.aggregation_of_data scheduled__2022-10-03T00:00:00+00:00 [running]> on host be1a5b89e146
+[2022-10-04 13:30:13,018] {taskinstance.py:1426} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=xxxx@xxxxx.com
+AIRFLOW_CTX_DAG_OWNER=Ram
+AIRFLOW_CTX_DAG_ID=agg_star_wars
+AIRFLOW_CTX_TASK_ID=aggregation_of_data
+AIRFLOW_CTX_EXECUTION_DATE=2022-10-03T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-10-03T00:00:00+00:00
+[2022-10-04 13:30:13,033] {base.py:79} INFO - Using connection to: id: postgres_local. Host: host.docker.internal, Port: 5432, Schema: postgres, Login: postgres, Password: ***, extra: {}
+[2022-10-04 13:30:13,085] {dbapi.py:225} INFO - Running statement: TRUNCATE star_wars_agg_data;
+
+INSERT INTO star_wars_agg_data SELECT * FROM
+
+(SELECT d.title,d.name from
+
+(SELECT c.title,c.name, RANK () OVER (PARTITION BY c.title ORDER BY c.age DESC)  as age_rank FROM
+
+(SELECT b.title , a.name , a.birth_year,
+  CASE WHEN a.age_decider = 'BBY' THEN CAST(LEFT(a.birth_year,-3) as FLOAT)
+			          ELSE CAST(LEFT(a.birth_year,-3) as FLOAT)*-1 end as age
+
+FROM (SELECT name,birth_year,RIGHT(birth_year,3) as age_decider,
+unnest(string_to_array( substr(films, 2, length(films) - 2),','))
+as film  FROM star_wars_people) a
+INNER JOIN star_wars_films as b on a.film=b.url
+
+WHERE a.birth_year != 'unknown') c ) d
+
+WHERE age_rank =1) e
+
+
+
+
+
+
+
+
+
+
+, parameters: None
+[2022-10-04 13:30:13,099] {dbapi.py:233} INFO - Rows affected: 6
+[2022-10-04 13:30:13,119] {taskinstance.py:1277} INFO - Marking task as SUCCESS. dag_id=agg_star_wars, task_id=aggregation_of_data, execution_date=20221003T000000, start_date=20221004T133012, end_date=20221004T133013
+[2022-10-04 13:30:13,151] {local_task_job.py:154} INFO - Task exited with return code 0
+[2022-10-04 13:30:13,248] {local_task_job.py:264} INFO - 0 downstream tasks scheduled from follow-on schedule check

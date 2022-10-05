@@ -1,0 +1,41 @@
+[2022-10-04 12:05:21,188] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: ingest_star_wars.create_films_table manual__2022-10-04T12:05:17.491372+00:00 [queued]>
+[2022-10-04 12:05:21,230] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: ingest_star_wars.create_films_table manual__2022-10-04T12:05:17.491372+00:00 [queued]>
+[2022-10-04 12:05:21,232] {taskinstance.py:1238} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-04 12:05:21,233] {taskinstance.py:1239} INFO - Starting attempt 1 of 1
+[2022-10-04 12:05:21,235] {taskinstance.py:1240} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-04 12:05:21,269] {taskinstance.py:1259} INFO - Executing <Task(PostgresOperator): create_films_table> on 2022-10-04 12:05:17.491372+00:00
+[2022-10-04 12:05:21,277] {standard_task_runner.py:52} INFO - Started process 319 to run task
+[2022-10-04 12:05:21,281] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'ingest_star_wars', 'create_films_table', 'manual__2022-10-04T12:05:17.491372+00:00', '--job-id', '25', '--raw', '--subdir', 'DAGS_FOLDER/ingest_starwars_data.py', '--cfg-path', '/tmp/tmpuha2_6k2', '--error-file', '/tmp/tmpc9h35ltk']
+[2022-10-04 12:05:21,283] {standard_task_runner.py:77} INFO - Job 25: Subtask create_films_table
+[2022-10-04 12:05:21,385] {logging_mixin.py:109} INFO - Running <TaskInstance: ingest_star_wars.create_films_table manual__2022-10-04T12:05:17.491372+00:00 [running]> on host be1a5b89e146
+[2022-10-04 12:05:21,495] {taskinstance.py:1426} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=xxxx@xxxxx.com
+AIRFLOW_CTX_DAG_OWNER=Ram
+AIRFLOW_CTX_DAG_ID=ingest_star_wars
+AIRFLOW_CTX_TASK_ID=create_films_table
+AIRFLOW_CTX_EXECUTION_DATE=2022-10-04T12:05:17.491372+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-10-04T12:05:17.491372+00:00
+[2022-10-04 12:05:21,509] {base.py:79} INFO - Using connection to: id: postgres_local. Host: host.docker.internal, Port: 5432, Schema: postgres, Login: postgres, Password: ***, extra: {}
+[2022-10-04 12:05:21,600] {dbapi.py:225} INFO - Running statement: CREATE TABLE IF NOT EXISTS star_wars_films (
+            title TEXT,
+            episode_id TEXT,
+            opening_crawl TEXT,
+            director TEXT,
+            producer TEXT,
+            release_date TEXT,
+            characters TEXT,
+            planets TEXT,
+            starships TEXT,
+            vehicles TEXT,
+            species TEXT,
+            created TEXT,
+            edited TEXT,
+            url TEXT
+            );, parameters: None
+[2022-10-04 12:05:21,637] {postgres.py:71} INFO - NOTICE:  relation "star_wars_films" already exists, skipping
+
+[2022-10-04 12:05:21,659] {taskinstance.py:1277} INFO - Marking task as SUCCESS. dag_id=ingest_star_wars, task_id=create_films_table, execution_date=20221004T120517, start_date=20221004T120521, end_date=20221004T120521
+[2022-10-04 12:05:21,736] {local_task_job.py:154} INFO - Task exited with return code 0
+[2022-10-04 12:05:21,794] {local_task_job.py:264} INFO - 1 downstream tasks scheduled from follow-on schedule check
